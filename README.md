@@ -1,24 +1,24 @@
-# api-integration
+<div align="center">
+<img src="./github/projeto.gif" style="width: 300px"/>
+</div>
 
-## Project setup
-```
-npm install
-```
+### Integração com API
+Projeto para práticar [vueJS](https://cli.vuejs.org/), uma aplicação simples que faz comunicação com API REST. 
 
-### Compiles and hot-reloads for development
+### Get started
 ```
-npm run serve
-```
+# Instale todas as dependências:
+$ npm install
 
-### Compiles and minifies for production
-```
-npm run build
-```
+# Para desenvolvimento:
+$ npm run serve
 
-### Lints and fixes files
-```
-npm run lint
+# Para produção:
+$ npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Tecnologias
+
+* Vue
+* Axios
+* Javascript
