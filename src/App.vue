@@ -1,28 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+    <article v-for="item in nutri" :key="item.id">
+      <strong>{{item.titulo}}</strong>
+      <img :src="item.capa" alt="">
+      <span>Categoria: {{item.categoria}}</span>
+      <p>{{item.subtitulo}}</p>
+    </article>
+
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script> 
+import Api from "./services/Api"
 
-export default {
+export default{
   name: 'App',
-  components: {
-    HelloWorld
+  data(){
+    return {
+      nutri : []
+    }
+  },
+  async created(){
+    const res = await Api.get('?api=posts')
+    this.nutri = res.data
   }
 }
+
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+
 </style>
